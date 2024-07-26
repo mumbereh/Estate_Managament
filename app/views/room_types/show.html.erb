@@ -1,0 +1,19 @@
+<h1>Room Type Details</h1>
+
+<p>
+  <strong>Code:</strong>
+  <%= @room_type.code %>
+</p>
+
+<p>
+  <strong>Status Name:</strong>
+  <%= @room_type.status_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @room_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_room_type_path(@room_type) %> |
+<%= link_to 'Back', room_types_path %>
