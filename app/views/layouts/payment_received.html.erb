@@ -1,0 +1,10 @@
+<!-- app/views/tenant_mailer/payment_received.html.erb -->
+<p>Dear <%= @tenant.full_name %>,</p>
+
+<p>We have received your payment for the month of <%= @payment.payment_date.strftime("%B %Y") %>.</p>
+<p>Amount Paid: <%= @payment.amount %></p>
+
+<p>Thank you for your prompt payment!</p>
+
+<p>Best regards,<br>
+Estate Management Team</p>

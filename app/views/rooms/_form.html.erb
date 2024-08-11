@@ -1,32 +1,36 @@
-<%= form_with(model: room) do |form| %>
+<%= form_with(model: room, local: true) do |form| %>
   <% if room.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
-
       <ul>
-        <% room.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% room.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :room_number, style: "display: block" %>
+  <div class="field">
+    <%= form.label :room_number %>
     <%= form.text_field :room_number %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :room_types_id %>
-    <%= form.collection_select :room_type_id, RoomType.all, :id, :status_name %> 
+    <%= form.label :room_type_id, "Room Type" %>
+    <%= form.collection_select :room_type_id, RoomType.all, :id, :status_name, prompt: "Select Room Type" %>
   </div>
 
-  <div>
+  <div class="field">
+    <%= form.label :estate_id, "Estate" %>
+    <%= form.collection_select :estate_id, Estate.all, :id, :name, prompt: "Select Estate" %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

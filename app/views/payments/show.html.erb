@@ -1,0 +1,41 @@
+<!-- app/views/payments/show.html.erb -->
+
+<h1 class="header">Payment Details</h1>
+
+<p>
+  <strong>Lease:</strong>
+  <%= @payment.lease.lease_description %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Payment Date:</strong>
+  <%= @payment.payment_date %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @payment.balance %>
+</p>
+
+<p>
+  <strong>Months Covered:</strong>
+  <%= @payment.months_covered %>
+</p>
+
+<p>
+  <strong>Balance Carried Forward:</strong>
+  <%= @payment.balance_carried_forward %>
+</p>
+
+<p>
+  <strong>Amount Due Next Month:</strong>
+  <%= @payment.amount_due_next_month %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

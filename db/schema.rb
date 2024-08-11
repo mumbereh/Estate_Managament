@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_26_123322) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_06_223817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "estates", force: :cascade do |t|
+    t.string "name"
+    t.string "owner"
+    t.string "location"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_estates_on_name", unique: true
+  end
+
+  create_table "leases", force: :cascade do |t|
+    t.bigint "tenant_id", null: false
+    t.bigint "room_id", null: false
+    t.date "start_date"
+    t.decimal "monthly_rent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "end_date"
+    t.index ["room_id"], name: "index_leases_on_room_id"
+    t.index ["tenant_id"], name: "index_leases_on_tenant_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "lease_id", null: false
+    t.decimal "amount"
+    t.date "payment_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "balance"
+    t.integer "months_covered"
+    t.decimal "balance_carried_forward"
+    t.date "start_month"
+    t.date "end_month"
+    t.decimal "amount_due_next_month"
+    t.index ["lease_id"], name: "index_payments_on_lease_id"
+  end
 
   create_table "room_types", force: :cascade do |t|
     t.string "code"
@@ -28,6 +65,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_26_123322) do
     t.bigint "room_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "estate_id"
+    t.index ["room_number"], name: "index_rooms_on_room_number", unique: true
     t.index ["room_type_id"], name: "index_rooms_on_room_type_id"
   end
 
@@ -44,6 +83,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_26_123322) do
     t.index ["room_id"], name: "index_tenants_on_room_id"
   end
 
+  add_foreign_key "leases", "rooms"
+  add_foreign_key "leases", "tenants"
+  add_foreign_key "payments", "leases"
   add_foreign_key "rooms", "room_types"
   add_foreign_key "tenants", "rooms"
 end

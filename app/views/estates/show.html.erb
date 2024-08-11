@@ -1,0 +1,25 @@
+<!-- app/views/estates/show.html.erb -->
+<h1 class="header">Estate Details</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @estate.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @estate.location %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @estate.owner %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @estate.description %>
+</p>
+
+<%= link_to 'Edit', edit_estate_path(@estate), class: 'btn btn-warning' %>
+<%= link_to 'Back', estates_path, class: 'btn btn-secondary' %>

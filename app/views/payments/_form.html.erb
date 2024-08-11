@@ -1,0 +1,40 @@
+<!-- app/views/payments/_form.html.erb -->
+
+<%= form_with(model: payment, local: true) do |form| %>
+  <% if payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+        <% payment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lease_id, 'Lease' %>
+    <%= form.collection_select :lease_id, Lease.all, :id, :lease_description, prompt: 'Select Lease', class: 'form-control' %>
+  </div>
+
+  
+  <div class="field">
+    <%= form.label :payment_date %>
+    <%= form.date_field :payment_date, class: 'form-control' %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, step: '0.01', class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount_due_next_month %>
+    <%= form.number_field :amount_due_next_month, step: '0.01', class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

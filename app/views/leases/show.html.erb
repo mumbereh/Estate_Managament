@@ -1,0 +1,39 @@
+<h1>Lease Details</h1>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @lease.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @lease.end_date %>
+</p>
+
+<p>
+  <strong>Monthly Rent:</strong>
+  <%= number_to_currency(@lease.monthly_rent) %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @lease.tenant.full_name %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @lease.room.room_number %>
+</p>
+
+<p>
+  <strong>Total Amount:</strong>
+  <%= number_to_currency(@lease.total_amount) %>
+</p>
+
+<p>
+  <strong>Lease Description:</strong>
+  <%= @lease.lease_description %>
+</p>
+
+<%= link_to 'Edit', edit_lease_path(@lease), class: 'btn btn-warning' %>
+<%= link_to 'Back', leases_path, class: 'btn btn-secondary' %>

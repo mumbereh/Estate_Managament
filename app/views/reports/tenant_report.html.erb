@@ -1,0 +1,64 @@
+<div class="container mt-4">
+    <h1 class="header">Tenant Report</h1>
+
+    <h2>Tenant Details</h2>
+    <p><strong>Full Name:</strong> <%= @tenant.full_name %></p>
+    <p><strong>Email:</strong> <%= @tenant.email %></p>
+    <p><strong>Home District:</strong> <%= @tenant.home_district %></p>
+    <p><strong>Village:</strong> <%= @tenant.village %></p>
+    <p><strong>Next of Kin:</strong> <%= @tenant.next_of_kin %></p>
+    <p><strong>Room Number:</strong> <%= @tenant.room.room_number if @tenant.room %></p>
+    <p><strong>Estate:</strong> <%= @tenant.room.estate.name if @tenant.room %></p>
+    <p><strong>Room Type:</strong> <%= @tenant.room.room_type.status_name if @tenant.room %></p>
+
+    <h2>Leases</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Monthly Rent</th>
+          <th>Total Payments</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <% @leases.each do |lease| %>
+          <tr>
+            <td><%= lease.start_date %></td>
+            <td><%= lease.end_date %></td>
+            <td><%= number_with_delimiter(sprintf("%.2f",lease.monthly_rent) )%></td>
+            <td><%= number_to_currency(lease.total_amount) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h2>Payments</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Payment Date</th>
+          <th>Amount</th>
+          <th>Balance</th>
+          <th>Months Cover</th>
+          <th>Bal Carried Forward</th>
+          <th>Amount Due Next Month</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payments.each do |payment| %>
+          <tr>
+            <td><%= payment.payment_date %></td>
+            <td><%= number_to_currency(payment.amount) %></td>
+            <td><%= payment.balance %></td>
+            <td><%= payment.months_covered %></td>
+            <td><%= payment.balance_carried_forward %></td>
+            <td><%= payment.amount_due_next_month %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

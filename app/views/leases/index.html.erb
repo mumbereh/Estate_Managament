@@ -1,0 +1,37 @@
+<h1>Leases</h1>
+
+<%= link_to 'New Lease', new_lease_path, class: 'btn btn-primary' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Monthly Rent</th>
+      <th>Tenant</th>
+      <th>Room</th>
+      <th>Months Paid</th>
+      <th>Amount Paid</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leases.each do |lease| %>
+      <tr>
+        <td><%= lease.start_date %></td>
+        <td><%= lease.end_date %></td>
+        <td><%= number_to_currency(lease.monthly_rent) %></td>
+        <td><%= lease.tenant.full_name %></td>
+        <td><%= lease.room.room_number %></td>
+        <td><%= lease.number_of_months_paid %></td>
+        <td><%= number_to_currency(lease.total_amount_paid) %></td>
+        <td>
+          <%= link_to 'Show', lease_path(lease), class: 'btn btn-info' %>
+          <%= link_to 'Edit', edit_lease_path(lease), class: 'btn btn-warning' %>
+          <%= link_to 'Destroy', lease_path(lease), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

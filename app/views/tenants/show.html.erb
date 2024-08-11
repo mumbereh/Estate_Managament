@@ -1,38 +1,27 @@
+<h1>Tenant Details</h1>
 <p>
-  <strong>First name:</strong>
-  <%= @tenant.first_name %>
+  <strong>Full Name:</strong>
+  <%= @tenant.full_name %>
 </p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @tenant.last_name %>
-</p>
-
 <p>
   <strong>Email:</strong>
   <%= @tenant.email %>
 </p>
-
 <p>
-  <strong>Home district:</strong>
+  <strong>Home District:</strong>
   <%= @tenant.home_district %>
 </p>
-
 <p>
   <strong>Village:</strong>
   <%= @tenant.village %>
 </p>
-
 <p>
-  <strong>Next of kin:</strong>
+  <strong>Next of Kin:</strong>
   <%= @tenant.next_of_kin %>
 </p>
-
 <p>
-  <strong>Room number:</strong>
-  <%= @tenant.room&.room_number %>
+  <strong>Room:</strong>
+  <%= @tenant.room.room_number %>
 </p>
-
-
 <%= link_to 'Edit', edit_tenant_path(@tenant) %> |
 <%= link_to 'Back', tenants_path %>

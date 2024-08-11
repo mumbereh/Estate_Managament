@@ -44,5 +44,11 @@ class RoomTypesController < ApplicationController
     def room_type_params
       params.require(:room_type).permit(:code, :status_name, :description)
     end
+
+    def tenant_params
+      params.require(:tenant).permit(:first_name, :last_name, :email, :home_district, :village, :next_of_kin, :room_id)
+    end
+
+
   end
   

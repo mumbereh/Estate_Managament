@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Receipt</title>
+</head>
+<body>
+  <h1 class="header">Payment Receipt</h1>
+  <p>Hello <%= @tenant.first_name %> <%= @tenant.last_name %>,</p>
+  <p>Thank you for your payment of <%= number_to_currency(@payment.amount) %> for room <%= @room.room_number %>.</p>
+  <p>This payment covers the following months:</p>
+  <ul>
+    <% @months_covered.each do |month| %>
+      <li><%= month %></li>
+    <% end %>
+  </ul>
+  <p>Balance carried forward: <%= number_to_currency(@payment.balance_carried_forward) %></p>
+  <p>Best regards,</p>
+  <p>Your Property Management Team</p>
+</body>
+</html>

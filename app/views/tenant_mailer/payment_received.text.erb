@@ -1,0 +1,13 @@
+Payment Receipt
+
+Hello <%= @tenant.first_name %> <%= @tenant.last_name %>,
+
+Thank you for your payment of <%= number_to_currency(@payment.amount) %> for room <%= @room.room_number %>.
+
+This payment covers the following months:
+<% @months_covered.each do |month| %>
+  - <%= month %>
+<% end %>
+<p>Balance carried forward: <%= number_to_currency(@payment.balance_carried_forward) %></p>
+Best regards,
+Property Management Team
