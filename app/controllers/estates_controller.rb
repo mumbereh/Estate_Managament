@@ -2,7 +2,7 @@ class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy, :tenants]
 
   def index
-    @estates = Estate.all
+    @estates = Estate.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -39,7 +39,7 @@ class EstatesController < ApplicationController
 
   # New action for displaying tenants of a specific estate
   def tenants
-    @tenants = @estate.tenants
+    @tenants = @estate.tenants.paginate(page: params[:page], per_page: 10)
   end
 
   private

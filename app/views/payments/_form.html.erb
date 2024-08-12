@@ -1,5 +1,3 @@
-<!-- app/views/payments/_form.html.erb -->
-
 <%= form_with(model: payment, local: true) do |form| %>
   <% if payment.errors.any? %>
     <div id="error_explanation">
@@ -18,12 +16,11 @@
     <%= form.collection_select :lease_id, Lease.all, :id, :lease_description, prompt: 'Select Lease', class: 'form-control' %>
   </div>
 
-  
   <div class="field">
     <%= form.label :payment_date %>
     <%= form.date_field :payment_date, class: 'form-control' %>
   </div>
-  
+
   <div class="field">
     <%= form.label :amount %>
     <%= form.number_field :amount, step: '0.01', class: 'form-control' %>

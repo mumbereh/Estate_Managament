@@ -4,41 +4,23 @@
   <title>Estate Management System</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <%= link_to 'E.M System', root_path, class: 'navbar-brand' %>
-      <button class="navbar-toggler" aria-label="Toggle navigation">
-        &#9776;
-      </button>
+      <a href="#" class="navbar-brand">E.M System</a>
+      <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
       <ul class="navbar-nav">
-       <li class="nav-item">
-          <%= link_to 'Home', root_path, class: 'nav-link' %>
-        <li class="nav-item">
-          <%= link_to 'Estates', estates_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Room Types', room_types_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Rooms', rooms_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Tenants', tenants_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Leases', leases_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-        <%= link_to 'payments', payments_path, class: 'nav-link' %>
-      </li>
-        <li class="nav-item">
-          <%= link_to 'Reports', reports_path, class: 'nav-link' %>
-        </li>
+        <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Estates', estates_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Room Types', room_types_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Rooms', rooms_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Tenants', tenants_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Leases', leases_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Payments', payments_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'Reports', reports_path, class: 'nav-link' %></li>
       </ul>
     </nav>
   </header>
@@ -46,11 +28,19 @@
   <div class="container mt-4">
     <%= yield %>
   </div>
-
+  
+  <footer>
+    <div class="footer-content">
+      <p>“The best way to predict the future is to create it.”</p>
+      <p>&copy; <%= Time.now.year %> Estate Management System. All rights reserved.</p>
+    </div>
+  </footer>
+  
   <script>
-    document.querySelector('.navbar-toggler').addEventListener('click', function() {
-      document.querySelector('.navbar-nav').classList.toggle('active');
-    });
+    function toggleNavbar() {
+      const nav = document.querySelector('.navbar-nav');
+      nav.classList.toggle('active');
+    }
   </script>
 </body>
 </html>

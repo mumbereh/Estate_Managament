@@ -16,11 +16,11 @@
         <td><%= room.price %></td>
         <td><%= room.room_type.status_name %></td>
         <td><%= room.estate.name %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', room, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_room_path(room), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Room', new_room_path %>
+<%= link_to 'New Room', new_room_path, class: "btn btn" %>

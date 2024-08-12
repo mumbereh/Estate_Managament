@@ -1,7 +1,9 @@
 <!-- app/views/estates/index.html.erb -->
-<h1 class="header">Estates</h1>
+<h1>Estates</h1>
 
-<%= link_to 'New Estate', new_estate_path, class: 'btn btn-primary' %>
+<div class="actions">
+  <%= link_to 'New Estate', new_estate_path, class: 'btn btn-success' %>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -16,14 +18,16 @@
   <tbody>
     <% @estates.each do |estate| %>
       <tr>
-        <td><%= link_to estate.name, tenants_estate_path(estate) %></td>
+        <td><%= link_to estate.name, tenants_estate_path(estate), class: 'nav-link' %></td>
         <td><%= estate.location %></td>
         <td><%= estate.owner %></td>
         <td><%= estate.description %></td>
-        <td><%= link_to 'Show', estate %></td>
-        <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
-        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', estate, class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_estate_path(estate), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @estates %>
