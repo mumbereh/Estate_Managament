@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estate Management System</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -11,8 +13,12 @@
   <header>
     <nav class="navbar">
       <a href="#" class="navbar-brand">E.M System</a>
-      <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
-      <ul class="navbar-nav">
+      <button id="hamburger" class="navbar-toggler">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links">
         <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to 'Estates', estates_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to 'Room Types', room_types_path, class: 'nav-link' %></li>
@@ -37,10 +43,16 @@
   </footer>
   
   <script>
-    function toggleNavbar() {
-      const nav = document.querySelector('.navbar-nav');
-      nav.classList.toggle('active');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbarToggler = document.querySelector('#hamburger');
+      const navbarNav = document.querySelector('.nav-links');
+
+      if (navbarToggler) {
+        navbarToggler.addEventListener('click', function() {
+          navbarNav.classList.toggle('active');
+        });
+      }
+    });
   </script>
 </body>
 </html>
