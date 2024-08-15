@@ -1,33 +1,32 @@
-<!-- app/views/estates/index.html.erb -->
 <h1>Estates</h1>
 
-<div class="actions">
-  <%= link_to 'New Estate', new_estate_path, class: 'btn btn-success' %>
-</div>
-
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Location</th>
       <th>Owner</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @estates.each do |estate| %>
       <tr>
-        <td><%= link_to estate.name, tenants_estate_path(estate), class: 'nav-link' %></td>
+        <td><%= estate.name%></td>
         <td><%= estate.location %></td>
         <td><%= estate.owner %></td>
         <td><%= estate.description %></td>
-        <td><%= link_to 'Show', estate, class: 'btn btn-info' %></td>
-        <td><%= link_to 'Edit', edit_estate_path(estate), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+
+          <td><%= link_to 'Detials', estate_path(estate), class: "btn btn-info" %>  </td>
+          <td><%= link_to 'Edit', edit_estate_path(estate), class: "btn btn-warning" %>  </td>
+          <td><%= link_to 'Delete', estate_path(estate), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>  </td>
+ <td><%= link_to 'View Tenants', tenants_estate_path(estate), class:"btn btn-primary" %> </td>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= paginate @estates %>
+<%= will_paginate @estates %>
+<%= link_to 'New Estate', new_estate_path, class: 'btn btn-primary' %>

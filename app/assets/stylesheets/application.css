@@ -9,8 +9,11 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto; /* Center container horizontally */
   padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
 }
 
 /* Header and Navigation */
@@ -90,6 +93,7 @@ form {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .field {
@@ -138,6 +142,7 @@ form {
   cursor: pointer;
   font-size: 16px;
   transition: transform 0.2s ease;
+  margin-bottom: 2%;
 }
 
 .field .btn:hover {
@@ -156,6 +161,7 @@ table {
   margin-bottom: 20px;
   background-color: white;
   box-shadow: 0 0 10px rgba(3, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 table th,
@@ -238,6 +244,7 @@ table tbody tr:hover {
   transition: transform 0.2s ease;
   text-align: center;
   white-space: nowrap;
+  font-size: large;
 }
 
 .btn:hover {
@@ -252,6 +259,8 @@ table tbody tr:hover {
 /* Button Color Variations */
 .btn.btn-info {
   background-color: #17a2b8;
+  width: 88%;
+  font-size: large;
 }
 
 .btn.btn-info:hover {
@@ -259,7 +268,9 @@ table tbody tr:hover {
 }
 
 .btn.btn-warning {
-  background-color: #ffc107;
+  background-color: rgb(230, 197, 14);
+  width: 89%;
+  font-size: large;
 }
 
 .btn.btn-warning:hover {
@@ -268,21 +279,18 @@ table tbody tr:hover {
 
 .btn.btn-danger {
   background-color: #dc3545;
+  width: 88%;
+  font-size: large;
 }
 
 .btn.btn-danger:hover {
   background-color: #c82333;
 }
 
-.btn.btn-success {
-  background-color: #28a745;
-}
-
 .btn.btn-success:hover {
   background-color: #218838;
 }
 
-/* Flash Messages */
 .flash {
   padding: 10px;
   border-radius: 4px;

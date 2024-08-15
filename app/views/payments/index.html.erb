@@ -26,7 +26,7 @@
         <td><%= payment.amount_due_next_month %></td>
         <td><%= link_to 'Show', payment, class: 'btn btn-info'  %></td>
         <td><%= link_to 'Edit', edit_payment_path(payment), class: 'btn btn-warning'  %></td>
-        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+      
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 
 
-<%= link_to 'New Payment', new_payment_path, class: 'btn btn-success' %>
+<%= link_to 'New Payment', new_payment_path, class: 'btn btn-primary' %>

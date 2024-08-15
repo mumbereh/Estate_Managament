@@ -1,7 +1,6 @@
 class Estate < ApplicationRecord
-  # Associations
-  has_many :rooms, dependent: :destroy
-  has_many :tenants
+    has_many :rooms
+    has_many :tenants, through: :rooms
 
   # Validations
   validates :name, presence: true, uniqueness: true

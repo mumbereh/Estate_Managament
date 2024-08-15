@@ -1,14 +1,16 @@
-<h1 class="header">Tenants</h1>
+<h1>Tenants for <%= @estate.name %></h1>
+
 <table>
   <thead>
     <tr>
-      <th>Full Name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Home District</th>
       <th>Village</th>
       <th>Next of Kin</th>
-      <th>Room</th>
-      <th colspan="3"></th>
+      <th>Room Number</th>
+      <th>Monthly Rent</th>
+      <th>Current Balance</th>
     </tr>
   </thead>
   <tbody>
@@ -20,13 +22,13 @@
         <td><%= tenant.village %></td>
         <td><%= tenant.next_of_kin %></td>
         <td><%= tenant.room.room_number %></td>
-        <td><%= link_to 'Show', tenant %></td>
-        <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
-        <td><%= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <% latest_payment = tenant.payments.order(created_at: :desc).first %>
+        <td><%= tenant.leases.order(created_at: :desc).first.try(:monthly_rent) %></td>
+        <td><%= latest_payment.try(:balance) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Tenant', new_tenant_path %>
 
-<%= paginate @estates %>
+<%= will_paginate @tenants %>

@@ -1,0 +1,24 @@
+<h1>Tenants with Payments for <%= @estate.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Total Payments</th>
+      <!-- Add other tenant details and payment summaries as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <tr>
+        <td><%= tenant.full_name %></td>
+        <td><%= tenant.email %></td>
+        <td><%= tenant.payments.sum(:amount) %></td>
+        <!-- Add other tenant details and payment summaries as needed -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @tenants %>

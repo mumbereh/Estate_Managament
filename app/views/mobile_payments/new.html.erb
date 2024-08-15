@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <h1>Make a Payment</h1>
+
+    <%= form_with url: mobile_payments_path, method: :post do |f| %>
+      <div class="field">
+        <%= label_tag :payment_method, "Choose Payment Method:" %><br>
+        <%= radio_button_tag :payment_method, 'mtn' %> MTN Uganda<br>
+        <%= radio_button_tag :payment_method, 'airtel' %> Airtel Uganda<br>
+      </div>
+
+      <div class="field">
+        <%= label_tag :phone_number, "Phone Number:" %>
+        <%= text_field_tag :phone_number %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :amount, "Amount:" %>
+        <%= text_field_tag :amount %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :reason, "Reason:" %>
+        <%= text_field_tag :reason %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :pin, "PIN:" %>
+        <%= password_field_tag :pin %>
+      </div>
+
+      <div class="actions">
+        <%= submit_tag "Pay Now" %>
+      </div>
+    <% end %>
+  </div>

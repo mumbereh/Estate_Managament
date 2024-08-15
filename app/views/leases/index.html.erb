@@ -1,6 +1,5 @@
 <h1>Leases</h1>
 
-<%= link_to 'New Lease', new_lease_path, class: 'btn btn-primary' %>
 
 <table>
   <thead>
@@ -26,12 +25,11 @@
         <td><%= lease.room.room_number %></td>
         <td><%= lease.number_of_months_paid %></td>
         <td><%= number_to_currency(lease.total_amount_paid) %></td>
-        <td>
-          <%= link_to 'Show', lease_path(lease), class: 'btn btn-info' %>
-          <%= link_to 'Edit', edit_lease_path(lease), class: 'btn btn-warning' %>
-          <%= link_to 'Destroy', lease_path(lease), method: :delete, id: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-        </td>
-      </tr>
+
+        <td><%= link_to 'Show', lease_path(lease), class: 'btn btn-info' %>  </td>
+        <td><%= link_to 'Edit', edit_lease_path(lease), class: 'btn btn-warning' %>  </td>
+        <td> <%= link_to 'Destroy', lease_path(lease), method: :delete, id: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New Lease', new_lease_path, class: 'btn btn-primary' %>
