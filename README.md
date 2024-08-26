@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+my Rails tasks
+the landing page 
+the Authentication
+the Email
+

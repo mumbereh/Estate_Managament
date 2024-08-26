@@ -8,10 +8,14 @@
   <%= javascript_include_tag 'application' %>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
+
+  <div class="container">
+  <div class="sideBar">
+    <header>
       <a href="#" class="navbar-brand">E.M System</a>
       <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
+    </header>
+    <nav class="navbar">
       <ul class="navbar-nav">
         <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to 'Estates', estates_path, class: 'nav-link' %></li>
@@ -23,10 +27,10 @@
         <li class="nav-item"><%= link_to 'Reports', reports_path, class: 'nav-link' %></li>
       </ul>
     </nav>
-  </header>
-  
-  <div class="container mt-4">
+   </div>
+     <main class ="mainArea">
     <%= yield %>
+   </main>      
   </div>
   
   <footer>
@@ -41,6 +45,13 @@
       const nav = document.querySelector('.navbar-nav');
       nav.classList.toggle('active');
     }
+
+    document.querySelectorAll('.nav-item').forEach(element => { 
+  element.addEventListener("click",(el)=>{
+    window.location.href=el.target.firstChild.href;
+  });
+});
+
   </script>
 </body>
 </html>
