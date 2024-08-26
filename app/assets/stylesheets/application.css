@@ -1,6 +1,11 @@
  /* @import "bootstrap"; */
 
 /* General Styles */
+*{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -71,7 +76,9 @@ header {
   font-size: 18px;
   transition: transform 0.2s ease;
 }
-
+a{
+  text-decoration: none;
+}
 .navbar-toggler {
   display: none;
   font-size: 24px;
@@ -406,6 +413,23 @@ footer {
 }
 
 .mainArea{
+  margin-top: 3rem;
   padding: 20px;
   /* width: 100%; */
+}
+
+.userInfo{
+  margin-top: 0.5rem;
+  right:5px; 
+  border-radius:50%;
+   position:fixed;
+    width:100px;
+    height:100px;
+    box-shadow: 0 0 8px 4px black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items:center;
+    padding: 10px;
+    cursor:pointer;
 }
