@@ -1,6 +1,6 @@
-/* app/assets/stylesheets/application.css */
+app/assets/stylesheets/application.css
 
-.table {
+ .table {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
@@ -36,5 +36,4 @@
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d;
-  }
-  
+  } 
