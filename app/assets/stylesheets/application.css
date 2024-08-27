@@ -2,9 +2,10 @@
 
 /* General Styles */
 *{
-  text-decoration: none;
   padding: 0;
   margin: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -71,8 +72,6 @@ header {
 }
 
 .navbar-nav .nav-link {
-  /* color: white; */
-  text-decoration: none;
   font-size: 18px;
   transition: transform 0.2s ease;
 }
@@ -413,7 +412,7 @@ footer {
 }
 
 .mainArea{
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding: 20px;
   /* width: 100%; */
 }
@@ -421,15 +420,71 @@ footer {
 .userInfo{
   margin-top: 0.5rem;
   right:5px; 
-  border-radius:50%;
    position:fixed;
-    width:100px;
-    height:100px;
-    box-shadow: 0 0 8px 4px black;
+    width:200px;
+    height:73px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items:center;
     padding: 10px;
     cursor:pointer;
+    box-shadow: 0 0 1px 1px rgb(175, 169, 169);
+    overflow-y: hidden;
+    transition: all ease-in-out 1s;
+    background-color: #f7f7f7f6;
+  }
+  
+  .userInfoOpen{
+    box-shadow: 0 0 8px 4px rgb(175, 169, 169);
+    height: 180px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.avatar{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.avatar p{
+  font-size: 12px;
+}
+.avatarPicture{
+  width: 80px;
+  height: 80px;
+}
+.avatarPicture img{
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
+
+.userInfo ul{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  margin: 0;
+}
+
+.userInfo ul li{
+  cursor: pointer;
+  padding: 10px;
+  transition: all 1s ease-in-out;
+  border:0.2px solid rgba(218, 202, 202, 0.555)
+}
+
+.userInfo ul li:hover{
+  box-shadow: 0 0 4px 3px rgba(179, 165, 165, 0.712);
+}
+
+.userInfo ul li:last-child{
+  transition: all ease-in-out 1s;
+}
+.userInfo ul li:last-child:hover{
+  background-color: rgb(226, 23, 23);
+  color: white;
 }
