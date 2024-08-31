@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tenants
   resources :leases
   resources :payments
+  resources :about, only:[:index]
   
   # Add routes for reports
   get 'reports', to: 'reports#index'
