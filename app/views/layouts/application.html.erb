@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Estate Management System</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-  <div class="container">
-    <div class="userInfo">
+  <!--<div class="container">
+     <div class="userInfo">
        <div class="avatar">
         <div class="avatarPicture">
           <img src="/assets/gra.jpeg" alt="Description of the image">
@@ -21,10 +21,10 @@
           <li>Change Password</li>
           <li>Logout</li>
         </ul>
-    </div>
+    </div> -->
 
 
-  <div class="sideBar">
+  <!-- <div class="sideBar">
     <header>
       <a href="/" class="navbar-brand">E.M System</a>
       <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
@@ -43,10 +43,11 @@
     </nav>
    </div>
      <main class ="mainArea">
-    <%= yield %>
-   </main>      
-  </div>
-  
+    </main>      
+  </div> -->
+  <%= yield %>
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
   <footer>
     <div class="footer-content">
       <p>“The best way to predict the future is to create it.”</p>

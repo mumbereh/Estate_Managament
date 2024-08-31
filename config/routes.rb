@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :estates do
     member do
       get 'tenants'
@@ -16,6 +17,6 @@ Rails.application.routes.draw do
   get 'reports/tenant_report/:tenant_id', to: 'reports#tenant_report', as: 'tenant_report'
 
   # Define the root route
-  root 'estates#index'
+  # root 'estates#index'
+  root 'home#index'
 end
-
