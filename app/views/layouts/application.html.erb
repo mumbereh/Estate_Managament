@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
-
 </head>
 <body class="<%= 'container' if user_signed_in? %>">
   
@@ -19,7 +18,10 @@
     </div>
      <ul>
        <li>Change Password</li>
-       <li>Logout</li>
+      
+       <li id="logout"><%= form_with url: destroy_user_session_path, method: :delete do %>
+        <%= submit_tag 'Logout',class:"logout" %>
+      <% end %></li>
      </ul>
  </div>    
  <div class="sideBar">
@@ -84,6 +86,7 @@ document.querySelector(".userInfo").addEventListener("click",()=>{
         document.querySelector(".userInfo").classList.remove("userInfoOpen");
     }
 });
+
 
   
   </script>
