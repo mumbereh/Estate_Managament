@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<div style="padding: 10px;">
+    <h1 style="color: white; background:#007bff; font-weight:bold;">EMS</h1>
 
-<p>You can confirm your account email through the link below:</p>
+    <p>Dear <b><%= @email %></b>! be Welcome at your Estate Management System.</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+    <p>Please confirm your account email through the link below: 👇 </p>
+    
+    <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+    <p>Thanks!</p>
+</div>

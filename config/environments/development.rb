@@ -43,15 +43,15 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'example.com',
-    user_name:            '<habertmbere@gmail.com',
-    password:             '<musokikay@2021>',
+    domain:               'gmail.com',
+    user_name:            'teamfromestatemanagementsys@gmail.com',
+    password:             'ylmm iirs cvbq hrqs',
     authentication:       'plain',
     enable_starttls_auto: true
   }
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  # Print deprecation notices to the Rails logger.
+  # Print deprecation notices to the Rails logger. teamfromestate2024
   config.active_support.deprecation = :log
 
   # Raise exceptions for disallowed deprecations.
