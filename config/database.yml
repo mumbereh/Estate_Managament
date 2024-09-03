@@ -5,7 +5,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: gra
+  password: mumbere
 
 development:
   <<: *default
