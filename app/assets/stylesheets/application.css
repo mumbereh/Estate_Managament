@@ -79,6 +79,7 @@ header {
 .navbar-nav .nav-link {
   font-size: 18px;
   transition: transform 0.2s ease;
+  color: blue;
 }
 a{
   text-decoration: none;
@@ -447,7 +448,7 @@ footer {
 
 .mainArea{
   margin-top: 4rem;
-  padding: 20px;/
+  padding: 20px;
 }
 
 .userInfo{
@@ -683,12 +684,12 @@ footer {
   }
   50% {
     background: linear-gradient(45deg, #ff9900, #ff0000); 
-    box-shadow: 0 0 10px rgba(233, 34, 3, 0.8), 0 0 40px rgba(255, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(26, 24, 24, 0.8), 0 0 40px rgba(255, 0, 0, 0.8);
     transform: scale(1.1);
   }
   100% {
     background: linear-gradient(45deg, #ff0000, #ff9900);
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 153, 0, 0.5);
+    box-shadow: 0 0 5px rgba(13, 13, 13, 0.5), 0 0 10px rgba(255, 153, 0, 0.5);
     transform: scale(1);
   }
 }
@@ -696,7 +697,7 @@ footer {
 button {
   width: 100%;
   margin-left: 2px;
-  border: 3px solid black;
+  border: 3px solid rgb(235, 226, 226);
   border-radius: 4px;
   padding: 5px;
   cursor: pointer;
@@ -716,5 +717,5 @@ button:hover {
 
 button:active {
   transform: scale(0.95); 
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 153, 0, 0.7);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 30px rgba(221, 217, 211, 0.7);
 }
