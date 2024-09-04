@@ -24,6 +24,7 @@
         <td><%= payment.months_covered %></td>
         <td><%= payment.balance_carried_forward %></td>
         <td><%= payment.amount_due_next_month %></td>
+        <td><%= link_to 'PDF', payment, class: 'btn btn-info'  %></td
         <td><%= link_to 'Show', payment, class: 'btn btn-info'  %></td>
         <td><%= link_to 'Edit', edit_payment_path(payment), class: 'btn btn-warning'  %></td>
         <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>

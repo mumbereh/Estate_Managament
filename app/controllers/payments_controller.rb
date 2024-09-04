@@ -5,8 +5,14 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
   end
-
+    
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Payment_id_#{@payment.id}", template: "payments/show.html.erb" 
+      end
+    end
   end
 
   def new
@@ -19,7 +25,7 @@ class PaymentsController < ApplicationController
       TenantMailer.payment_received(@payment.lease.tenant, @payment).deliver_now
       redirect_to @payment, notice: 'Payment was successfully created.'
     else
-      @leases = Lease.all
+      set_leases
       render :new
     end
   end
@@ -31,7 +37,7 @@ class PaymentsController < ApplicationController
     if @payment.update(payment_params)
       redirect_to @payment, notice: 'Payment was successfully updated.'
     else
-      @leases = Lease.all
+      set_leases
       render :edit
     end
   end

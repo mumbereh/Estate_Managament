@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   background-color: #f7f7f7;
   font-family: Arial, sans-serif;
-  padding-bottom: 60px;/* Add space for the footer */
+ 
   height: 100vh;
   background-image:url("bg2.jpg");
   background-size: cover;
@@ -113,13 +113,13 @@ a{
   }
 }
 
-/* Form Styles */
-/* form {
+
+ form {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
+}
 
 .field {
   /* margin-bottom: 15px; */
@@ -625,4 +625,47 @@ footer {
 .errorsContainer{
   padding: 10px;
   color: white;
+}
+
+.home{
+
+}
+
+@keyframes boomEffect {
+  0% {
+    color: red;
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    color: blue;
+    opacity: 0.5;
+    transform: scale(1.5); 
+  }
+  100% {
+    color: green;
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
+
+.home h1 {
+  text-align: center;
+  animation: boomEffect 1.5s infinite;
+}
+
+.estate-background {
+  background-image: url("/assets/best1.jpg"); /* Replace with your estate image path */
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Adjust height as needed */
+  margin-top: 20px; /* Space between the h1 and background image */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+  margin-bottom: 10px;
+}
+
+.home {
+  padding: 20px;
+  position: relative;
 }
