@@ -70,8 +70,7 @@ header {
 }
 
 .navbar-nav .nav-item {
-  margin-left: 10px;
-  border: 1px solid #007bff;
+  margin-left: 5px;
   border-radius: 4px;
   padding: 5px;
   cursor: pointer;
@@ -97,7 +96,7 @@ a{
 }
 
 .navbar-nav .nav-item a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Mobile Styles */
@@ -448,8 +447,7 @@ footer {
 
 .mainArea{
   margin-top: 4rem;
-  padding: 20px;
-  /* width: 100%; */
+  padding: 20px;/
 }
 
 .userInfo{
@@ -472,8 +470,7 @@ footer {
   .userInfoOpen{
     box-shadow: 0 0 8px 4px rgb(175, 169, 169);
     height: 180px;
-    /* border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px; */
+   
 }
 
 .avatar{
@@ -652,20 +649,72 @@ footer {
 .home h1 {
   text-align: center;
   animation: boomEffect 1.5s infinite;
+  margin-top: -20px;
 }
 
 .estate-background {
-  background-image: url("/assets/best1.jpg"); /* Replace with your estate image path */
+  background-image: url("/assets/best1.jpg"); 
   background-size: cover;
   background-position: center;
-  height: 300px; /* Adjust height as needed */
-  margin-top: 20px; /* Space between the h1 and background image */
-  border-radius: 10px; /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+  height: 300px;
+  margin-top: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   margin-bottom: 10px;
 }
 
 .home {
   padding: 20px;
   position: relative;
+}
+
+.home h1 {
+  text-align: center;
+  animation: boomEffect 1.5s infinite;
+}
+
+
+
+@keyframes fireEffect {
+  0% {
+    background: linear-gradient(45deg, #ff0000, #ff9900); 
+    box-shadow: 0 0 5px rgba(138, 136, 136, 0.5), 0 0 10px rgba(255, 153, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    background: linear-gradient(45deg, #ff9900, #ff0000); 
+    box-shadow: 0 0 10px rgba(233, 34, 3, 0.8), 0 0 40px rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+  100% {
+    background: linear-gradient(45deg, #ff0000, #ff9900);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 153, 0, 0.5);
+    transform: scale(1);
+  }
+}
+
+button {
+  width: 100%;
+  margin-left: 2px;
+  border: 3px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold; 
+  text-transform: uppercase; 
+  background: linear-gradient(45deg, #007bff, #00aaff); 
+  transition: all 0.3s ease;
+  animation: fireEffect 2s infinite; 
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff0000, #ff9900); 
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.8);
+  transform: scale(1.1); 
+}
+
+button:active {
+  transform: scale(0.95); 
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 153, 0, 0.7);
 }
