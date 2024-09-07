@@ -1,5 +1,5 @@
 class TenantMailer < ApplicationMailer
-  default from: 'siirasonh@gmail.com'
+  default from: 'teamfromestatemanagementsys@gmail.com'
 
   def payment_received(tenant, payment)
     @payment = payment
