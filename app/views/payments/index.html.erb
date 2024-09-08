@@ -3,13 +3,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Lease</th>
+      <th>Tenant Name</th>
       <th>Date</th>
       <th>Amount</th>
-      <th>Balance</th>
-      <th>Months Covered</th>
-      <th>Carried Forward</th>
-      <th>Next Month</th>
+      <th>Bal</th>
+      <th>Months paid</th>
+      <th>Bal Forward</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,16 +16,15 @@
   <tbody>
     <% @payments.each do |payment| %>
       <tr>
-        <td><%= payment.lease.lease_description %></td>
+        <td><%= payment.tenant.full_name %></td>
         <td><%= payment.payment_date %></td>
         <td><%= payment.amount %></td>
         <td><%= payment.balance %></td>
         <td><%= payment.months_covered %></td>
         <td><%= payment.balance_carried_forward %></td>
-        <td><%= payment.amount_due_next_month %></td>
         <td><%= link_to 'Show', payment, class: 'btn btn-info'  %></td>
         <td><%= link_to 'Edit', edit_payment_path(payment), class: 'btn btn-warning'  %></td>
-        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+        <td><%= link_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
       </tr>
     <% end %>
   </tbody>

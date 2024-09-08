@@ -80,4 +80,6 @@ end
 gem 'dartsass-sprockets'
 gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 gem 'devise'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 

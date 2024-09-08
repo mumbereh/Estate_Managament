@@ -1,21 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payment Receipt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .receipt_email {
+      max-width: 600px;
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin: 5px 0;
+      border-left: 4px solid #4CAF50;
+      border-radius: 5px;
+    }
+
+    .amount {
+      font-weight: bold;
+      color: #4CAF50;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #999;
+    }
+
+  </style>
 </head>
 <body>
+
+<div class="receipt_email">
   <h1 class="header">Payment Receipt</h1>
   <p>Hello <%= @tenant.first_name %> <%= @tenant.last_name %>,</p>
-  <p>Thank you for your payment of <%= number_to_currency(@payment.amount) %> for room <%= @room.room_number %>.</p>
+  <p>Thank you for your payment of 
+    <span class="amount"><%= number_to_currency(@payment.amount, unit: "UGX ") %></span>
+    for room <%= @room.room_number %>.
+  </p>
   <p>This payment covers the following months:</p>
   <ul>
     <% @months_covered.each do |month| %>
       <li><%= month %></li>
     <% end %>
   </ul>
-  <p>Balance carried forward: <%= number_to_currency(@payment.balance_carried_forward) %></p>
+  <p>Balance carried forward: 
+    <span class="amount"><%= number_to_currency(@payment.balance_carried_forward, unit: "UGX ") %></span>
+  </p>
   <p>Best regards,</p>
-  <p>Your Property Management Team</p>
+  <p>Property Management Team</p>
+  <div class="footer">
+    <p>&copy; <%= Date.today.year %> Property Management Company. All rights reserved.</p>
+  </div>
+</div>
+
 </body>
 </html>
