@@ -14,14 +14,14 @@
      <div class="avatarPicture">
        <img src="/assets/bg1.jpeg" alt="Description of the image">
      </div>
-     <p>Kelly Josh</p>
+     <p><%=current_user.name%></p>
     </div>
      <ul>
-       <li>Change Password</li>
-       b
+       <li><%= link_to 'Change Password', new_user_password_path %></li>
        <li id="logout"><%= form_with url: destroy_user_session_path, method: :delete do %>
-        <%= submit_tag 'Logout',class:"logout" %>
-      <% end %></li>
+        <%= submit_tag 'Logout',class:"logoutBtn" %>
+      <% end %>
+    </li>
      </ul>
  </div>    
  <div class="sideBar">

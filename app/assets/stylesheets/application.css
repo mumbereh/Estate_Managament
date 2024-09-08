@@ -13,7 +13,6 @@ body {
   flex-direction: column;
   background-color: #f7f7f7;
   font-family: Arial, sans-serif;
- 
   height: 100vh;
   background-image:url("bg2.jpg");
   background-size: cover;
@@ -467,7 +466,7 @@ footer {
   .userInfoOpen{
     box-shadow: 0 0 8px 4px rgb(175, 169, 169);
     height: 180px;
-   
+    z-index: 3000;
 }
 
 .avatar{
@@ -512,14 +511,23 @@ footer {
 
 .userInfo ul li:last-child{
   transition: all ease-in-out 1s;
+  /* padding: 2px; */
+  /* height: 10px; */
+  padding: 5px;
 }
+
+.userInfo ul li:last-child form{
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+
 .userInfo ul li:last-child:hover{
   background-color: rgb(226, 23, 23);
   color: white;
 }
 
 .deviseContainer{
-  /* background-color: red; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -612,12 +620,14 @@ footer {
 .aboutSection p{
   padding: 5px;
 }
-.logout{
-  background-color:transparent;
-  border: transparent;
+
+.logoutBtn{
+  cursor: pointer;
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  height: 25px !important;
+  background-color: transparent;
+  border: transparent;
 }
 
 .errorsContainer{
