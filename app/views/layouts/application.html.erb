@@ -2,58 +2,69 @@
 <html>
 <head>
   <title>Estate Management System</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <div class="container">
-    <div class="userInfo">
-       <div class="avatar">
-        <div class="avatarPicture">
-          <img src="/assets/gra.jpeg" alt="Description of the image">
-        </div>
-        <p>Graciano Henrique</p>
-       </div>
-        <ul>
-          <li>Change Password</li>
-          <li>Logout</li>
-        </ul>
-    </div>
-
-
-  <div class="sideBar">
-    <header>
-      <a href="/" class="navbar-brand">E.M System</a>
-      <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
-    </header>
-    <nav class="navbar">
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to 'Dashboard', root_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Estates', estates_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Room Types', room_types_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Rooms', rooms_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Tenants', tenants_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Leases', leases_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Payments', payments_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Reports', reports_path, class: 'nav-link' %></li>
-      </ul>
-    </nav>
-   </div>
-     <main class ="mainArea">
-    <%= yield %>
-   </main>      
-  </div>
+<body class="<%= 'container' if user_signed_in? %>">
   
+  <% if user_signed_in?  %>
+  <div class="userInfo">
+    <div class="avatar">
+     <div class="avatarPicture">
+       <img src="/assets/gra.jpeg" alt="Description of the image">
+     </div>
+     <p>Matafali</p>
+    </div>
+     <ul>
+       <li>Change Password</li>
+       b
+       <li id="logout"><%= form_with url: destroy_user_session_path, method: :delete do %>
+        <%= submit_tag 'Logout',class:"logout" %>
+      <% end %></li>
+     </ul>
+ </div>    
+ <div class="sideBar">
+  <header>
+    <a href="/" class="navbar-brand">E.M System</a>
+    <button class="navbar-toggler" onclick="toggleNavbar()">&#9776;</button>
+  </header>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item"><%= link_to 'Dashboard', root_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Estates', estates_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Room Types', room_types_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Rooms', rooms_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Tenants', tenants_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Leases', leases_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Payments', payments_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Reports', reports_path, class: 'nav-link' %></li>
+    </ul>
+  </nav>
+ </div>
+   <main class ="mainArea">
+    <%= yield %>
+  </main>      
+ <% else %>
+ <%= yield %>
+ <% end%>
+ 
+
+<% unless user_signed_in? %>
+<div class="infoContainer">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>  
+<% end %>
+
+
   <footer>
     <div class="footer-content">
       <p>“The best way to predict the future is to create it.”</p>
       <p>&copy; <%= Time.now.year %> Estate Management System. All rights reserved.</p>
     </div>
   </footer>
-  
+
   <script>
     function toggleNavbar() {
       const nav = document.querySelector('.navbar-nav');
@@ -75,6 +86,7 @@ document.querySelector(".userInfo").addEventListener("click",()=>{
         document.querySelector(".userInfo").classList.remove("userInfoOpen");
     }
 });
+
 
   
   </script>

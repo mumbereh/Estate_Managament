@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
+  
   belongs_to :estate
   has_many :tenants
   belongs_to :room_type
