@@ -1,5 +1,7 @@
-<h1 class="header">Payment Details</h1>
 
+<h1 h1 class="mt-4 mb-4">Payment Details</h1>
+<div class="card mb-4">
+  <div class="card-body">
 <p>
   <strong>Lease:</strong>
   <%= @payment.lease.lease_description %>
@@ -34,6 +36,9 @@
   <strong>Next Month:</strong>
   <%= @payment.amount_due_next_month %>
 </p>
+
+</div>
+</div>
 
 <%= link_to 'Edit', edit_payment_path(@payment), class: 'btn btn-warning' %>
 <%= link_to 'Back', payments_path, class: 'btn btn-secondary' %>

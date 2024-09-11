@@ -15,16 +15,8 @@ test:
   <<: *default
   database: rental_test
 
-# production:
-#   <<: *default
-#   database: rental_production
-#   username: <%= ENV['MYAPP_DATABASE_USER'] %>
-#   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
-
-
-  production:
+production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
   database: rental_production
-  username: my_app_render
-  password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
+  username: <%= ENV['MYAPP_DATABASE_USER'] %>
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>

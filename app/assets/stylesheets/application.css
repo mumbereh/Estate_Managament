@@ -879,3 +879,16 @@ background-color: blue;
     width: 100%;
   }
 }
+.card-body p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.card-body strong {
+  color: #555;
+}
+
+.actions .btn {
+  margin-top: 15px;
+}

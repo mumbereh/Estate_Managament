@@ -1,39 +1,45 @@
-<h1>Lease Details</h1>
+<h1 class="mt-4 mb-4">Lease Details</h1>
 
-<p>
-  <strong>Start Date:</strong>
-  <%= @lease.start_date %>
-</p>
+<div class="card mb-4">
+  <div class="card-body">
+    <p>
+      <strong>Start Date:</strong>
+      <%= @lease.start_date.strftime("%B %d, %Y") %>
+    </p>
 
-<p>
-  <strong>End Date:</strong>
-  <%= @lease.end_date %>
-</p>
+    <p>
+      <strong>End Date:</strong>
+      <%= @lease.end_date.strftime("%B %d, %Y") %>
+    </p>
 
-<p>
-  <strong>Monthly Rent:</strong>
-  <%= number_to_currency(@lease.monthly_rent) %>
-</p>
+    <p>
+      <strong>Monthly Rent:</strong>
+      <%= number_to_currency(@lease.monthly_rent) %>
+    </p>
 
-<p>
-  <strong>Tenant:</strong>
-  <%= @lease.tenant.full_name %>
-</p>
+    <p>
+      <strong>Tenant:</strong>
+      <%= @lease.tenant.full_name %>
+    </p>
 
-<p>
-  <strong>Room:</strong>
-  <%= @lease.room.room_number %>
-</p>
+    <p>
+      <strong>Room:</strong>
+      <%= @lease.room.room_number %>
+    </p>
 
-<p>
-  <strong>Total Amount:</strong>
-  <%= number_to_currency(@lease.total_amount) %>
-</p>
+    <p>
+      <strong>Total Amount:</strong>
+      <%= number_to_currency(@lease.total_amount) %>
+    </p>
 
-<p>
-  <strong>Lease Description:</strong>
-  <%= @lease.lease_description %>
-</p>
+    <p>
+      <strong>Lease Description:</strong>
+      <%= @lease.lease_description.presence || "No description provided" %>
+    </p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_lease_path(@lease), class: 'btn btn-warning' %>
-<%= link_to 'Back', leases_path, class: 'btn btn-secondary' %>
+<div class="actions">
+  <%= link_to 'Edit', edit_lease_path(@lease), class: 'btn btn-warning mr-2' %>
+  <%= link_to 'Back', leases_path, class: 'btn btn-secondary' %>
+</div>

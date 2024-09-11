@@ -1,5 +1,44 @@
 <h1>Edit Lease</h1>
 
-<%= render 'form', lease: @lease %>
+<%= form_with(model: @lease, local: true) do |form| %>
+  <% if @lease.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@lease.errors.count, "error") %> prohibited this lease from being saved:</h2>
+      <ul>
+        <% @lease.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Back', leases_path %>
+  <div class="field">
+    <%= form.label :start_date, "Start Date", class: "form-label" %>
+    <%= form.date_field :start_date, class: 'form-control datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date, "End Date", class: "form-label" %>
+    <%= form.date_field :end_date, class: 'form-control datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_id, "Room", class: "form-label" %>
+    <%= form.collection_select :room_id, Room.all, :id, :room_number, { prompt: "Select Room" }, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tenant_id, "Tenant", class: "form-label" %>
+    <%= form.collection_select :tenant_id, Tenant.all, :id, :full_name, { prompt: "Select Tenant" }, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monthly_rent, "Monthly Rent", class: "form-label" %>
+    <%= form.number_field :monthly_rent, class: "form-control", step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.submit "Update Lease", class: "btn btn-primary" %>
+    <%= link_to 'Back', leases_path, class: "btn btn-secondary ml-2" %>
+  </div>
+<% end %>
