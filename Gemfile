@@ -34,8 +34,6 @@ gem "tzinfo-data", platforms: %i[windows jruby]  # Timezone info on Windows
 
 gem "bootsnap", require: false  # Speeds up boot times
 
-gem "dartsass-sprockets"  # Sass support for the asset pipeline
-
 gem "bootstrap", "~> 5.3", ">= 5.3.3"  # Latest Bootstrap for styling
 
 gem "devise"  # Authentication support
@@ -43,8 +41,6 @@ gem "devise"  # Authentication support
 gem "wicked_pdf"  # PDF generation
 
 gem "wkhtmltopdf-binary"  # Binary dependency for PDF generation
-
-gem "sass-embedded", "~> 1.78.0"  # Sass compilation support
 
 gem "sassc-rails", "~> 2.1"  # SassC for faster Sass compilation
 

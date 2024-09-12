@@ -30,7 +30,7 @@
 !/tmp/storage/.keep
 
 /public/assets
-
+/gemfile.lock/*
 
 
 /config/master.key
