@@ -11,3 +11,5 @@ bundle exec rails db:migrate
 
 # Precompile assets
 bundle exec rails assets:precompile
+# Run server
+bundle exex rails server
