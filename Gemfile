@@ -84,3 +84,8 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 
+gem 'sass-embedded', '~> 1.78.0'
+gem 'sassc-rails'
+
+
+
