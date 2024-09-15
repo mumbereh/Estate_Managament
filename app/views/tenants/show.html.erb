@@ -1,4 +1,7 @@
-<h1>Tenant Details</h1>
+<h1 class="mt-4 mb-4">Tenant Details</h1>
+
+<div class="card mb-4">
+  <div class="card-body">
 <p>
   <strong>Full Name:</strong>
   <%= @tenant.full_name %>
@@ -23,5 +26,7 @@
   <strong>Room:</strong>
   <%= @tenant.room.room_number %>
 </p>
-<%= link_to 'Edit', edit_tenant_path(@tenant) %> |
-<%= link_to 'Back', tenants_path, class: 'btn btn-primary' %>
+</div>
+</div>
+<%= link_to 'Edit', edit_tenant_path(@tenant), class: 'btn btn-warning mr-2' %> |
+<%= link_to 'Back', tenants_path, class: 'btn btn-secondary' %>
