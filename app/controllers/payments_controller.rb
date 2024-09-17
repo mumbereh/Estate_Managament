@@ -22,13 +22,14 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
     if @payment.save
-      TenantMailer.payment_received(@payment.lease.tenant, @payment).deliver_now
+      TenantMailer.payment_received(@payment.lease.tenant, @payment, current_user).deliver_now
       redirect_to @payment, notice: 'Payment was successfully created.'
     else
       set_leases
       render :new
     end
   end
+  
 
   def edit
   end
