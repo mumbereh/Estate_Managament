@@ -8,8 +8,8 @@ services:
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
-        value: "<your_database_connection_string_here>"
+        value: "postgres://username:password@host:port/database_name"  # This is the value you copied
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2
+        value: "2"

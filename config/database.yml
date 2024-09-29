@@ -8,13 +8,11 @@ default: &default
 development:
   <<: *default
   database: rental_development
+
 test:
   <<: *default
   database: rental_test
 
 production:
   <<: *default
-  database: rental_production
-  username: postgres
-  password: mumbere
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>
