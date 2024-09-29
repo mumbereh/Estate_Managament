@@ -5,6 +5,8 @@ source "https://rubygems.org"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"  # Using the latest stable Rails version
 
+gem 'execjs', '~> 2.9.1'
+
 gem "sprockets-rails"  # Asset pipeline for Rails
 
 gem "mail"  # Handle email sending
@@ -26,6 +28,8 @@ gem "turbo-rails"  # SPA-like experience via Hotwire's Turbo
 gem "stimulus-rails"  # For modest JavaScript framework Stimulus
 
 gem "jbuilder"  # For building JSON APIs
+
+gem 'autoprefixer-rails', '~> 10.4.19.0'
 
 gem "httparty"  # For making HTTP requests
 

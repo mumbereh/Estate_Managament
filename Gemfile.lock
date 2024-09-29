@@ -303,12 +303,14 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  autoprefixer-rails (~> 10.4.19.0)
   bootsnap
   bootstrap (~> 5.3, >= 5.3.3)
   capybara
   debug
   devise
   dotenv-rails
+  execjs (~> 2.9.1)
   groupdate (~> 3.0)
   httparty
   importmap-rails
