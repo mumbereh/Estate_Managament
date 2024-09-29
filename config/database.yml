@@ -1,5 +1,3 @@
-# config/database.yml
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -17,4 +15,7 @@ test:
 
 production:
   <<: *default
-  
+  database: rental_production
+  username: postgres
+  password: mumbere
+  host: localhost
