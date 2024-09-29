@@ -4,8 +4,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: mumbere
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
@@ -17,6 +16,4 @@ test:
 
 production:
   <<: *default
-  database: rental_production
-  username: <%= ENV['MYAPP_DATABASE_USER'] %>
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  # No need to specify database, username, and password here, as DATABASE_URL will provide them.
