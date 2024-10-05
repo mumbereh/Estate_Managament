@@ -4,7 +4,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true  # This is more conventional for production
+  config.cache_classes = true
 
   # Eager load code on boot.
   config.eager_load = true
@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Disable serving static files from `public/`, relying on NGINX/Apache to do so instead.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV["RENDER"].present?
 
   # Compress CSS using a preprocessor.
   config.assets.css_compressor = :sass
@@ -57,9 +57,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               ENV['MAIL_DOMAIN'] || 'example.com', # Set this in your environment
-    user_name:            ENV['GMAIL_USERNAME'], # Make sure to set this in your environment
-    password:             ENV['GMAIL_PASSWORD'], # Make sure to set this in your environment
+    domain:               ENV['MAIL_DOMAIN'] || 'example.com',
+    user_name:            ENV['GMAIL_USERNAME'],
+    password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
