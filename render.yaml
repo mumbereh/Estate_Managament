@@ -1,23 +1,26 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-    plan: free
+  - name: postgres
+    ipAllowList: []
 
 services:
   - type: web
-    name: mysite
+    name: rails
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "bundle exec rails server"
+    startCommand: bundle exec rails server
+    preDeployCommand: "bundle exec rails db:migrate"
+
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: mysite
-          property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: MYAPP_DATABASE_USER
+        sync: false
+      - key: MYAPP_DATABASE_PASSWORD
+        sync: false
+      - key: DATABASE_HOST
+        sync: false  # Optional, if you want to define a specific host
