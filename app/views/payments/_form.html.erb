@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="show-container">
   <div class="field">
     <%= form.label :lease_id, 'Lease' %>
     <%= form.collection_select :lease_id, Lease.all, :id, :lease_description, prompt: 'Select Lease', class: 'form-control' %>
@@ -31,7 +31,8 @@
     <%= form.number_field :amount_due_next_month, step: '0.01', class: 'form-control', disabled: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit class: 'btn btn-primary' %>
-  </div>
+  <div class="field">
+  <%= form.submit class: 'btn btn-primary' %>
+</div>
 <% end %>
+

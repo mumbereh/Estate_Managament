@@ -1,6 +1,6 @@
 <h1 class="header">Payments</h1>
 
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
       <th>Tenant Name</th>
@@ -22,9 +22,9 @@
         <td><%= payment.balance %></td>
         <td><%= payment.months_covered %></td>
         <td><%= payment.balance_carried_forward %></td>
-        <td><%= link_to 'Show', payment, class: 'btn btn-info'  %></td>
-        <td><%= link_to 'Edit', edit_payment_path(payment), class: 'btn btn-warning'  %></td>
-        <td><%= link_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+        <td><%= link_to 'Details', payment, class: 'btn btn-info'  %></td>
+        <td><%= link_to 'Update', edit_payment_path(payment), class: 'btn btn-warning'  %></td>
+        <td><%= link_to 'Delete', payment, method: :detete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
       </tr>
     <% end %>
   </tbody>

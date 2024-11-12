@@ -41,11 +41,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :estate_id %>
+    <%= form.collection_select :estate_id, Estate.all, :id, :name, prompt: "Select an Estate" %>
+  </div>
+
+  <div class="field">
     <%= form.label :room_id %>
-    <%= form.collection_select :room_id, Room.all, :id, :room_number %>
+    <%= form.collection_select :room_id, Room.all, :id, :room_number, prompt: "Select a Room" %>
   </div>
 
   <div class="actions">
-  <%= form.submit class: 'btn btn-primary' %>
-</div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
 <% end %>

@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="show-container">
   <div class="field">
     <%= form.label :start_date %>
     <%= form.date_field :start_date, class: 'datepicker' %>
@@ -32,6 +32,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

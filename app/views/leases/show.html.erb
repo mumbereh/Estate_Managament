@@ -1,7 +1,8 @@
-<h1 class="mt-4 mb-4">Lease Details</h1>
+<h1 class="header">Lease Details</h1>
 
 <div class="card mb-4">
   <div class="card-body">
+  <div class="show_container">
     <p>
       <strong>Start Date:</strong>
       <%= @lease.start_date.strftime("%B %d, %Y") %>
@@ -42,4 +43,5 @@
 <div class="actions">
   <%= link_to 'Edit', edit_lease_path(@lease), class: 'btn btn-warning mr-2' %>
   <%= link_to 'Back', leases_path, class: 'btn btn-secondary' %>
+</div>
 </div>

@@ -1,6 +1,4 @@
-<h1>Leases</h1>
-
-<%= link_to 'New Lease', new_lease_path, class: 'btn btn-primary' %>
+<h1 class="header">Leases</h1>
 
 <table>
   <thead>
@@ -27,10 +25,11 @@
         <td><%= lease.number_of_months_paid %></td>
         <td><%= number_to_currency(lease.total_amount_paid) %></td>
         <td>
-          <%= link_to 'Show', lease_path(lease), class: 'btn btn-info' %>
-          <%= link_to 'Edit', edit_lease_path(lease), class: 'btn btn-warning' %>
+          <%= link_to 'Details', lease_path(lease), class: 'btn btn-info' %>
+          <%= link_to 'Update', edit_lease_path(lease), class: 'btn btn-warning' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New Lease', new_lease_path, class: 'btn btn-primary' %>

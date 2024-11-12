@@ -21,9 +21,9 @@
           <td><%= tenant.village %></td>
           <td><%= tenant.next_of_kin %></td>
           <td><%= tenant.room.room_number %></td>
-          <td><%= link_to 'Show', tenant, class: 'btn btn-info' %></td>
-          <td><%= link_to 'Edit', edit_tenant_path(tenant), class: 'btn btn-warning' %></td>
-          <td><%= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <td><%= link_to 'Details', tenant, class: 'btn btn-info' %></td>
+          <td><%= link_to 'Update', edit_tenant_path(tenant), class: 'btn btn-warning' %></td>
+          <td><%= link_to 'Delete', tenant, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
     <% else %>

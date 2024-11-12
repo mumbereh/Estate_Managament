@@ -22,9 +22,9 @@
         <td><%= estate.location %></td>
         <td><%= estate.owner %></td>
         <td><%= estate.description %></td>
-        <td><%= link_to 'Show', estate, class: 'btn btn-info' %></td>
-        <td><%= link_to 'Edit', edit_estate_path(estate), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <td><%= link_to 'details', estate, class: 'btn btn-info' %></td>
+        <td><%= link_to 'Update', edit_estate_path(estate), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Delete', estate, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

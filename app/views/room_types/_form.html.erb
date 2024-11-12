@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="show-container">
   <div class="field">
     <%= form.label :status_name %><br>
     <%= form.text_field :status_name %>
@@ -21,6 +21,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

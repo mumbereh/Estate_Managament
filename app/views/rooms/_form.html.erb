@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="show-container">
   <div class="field">
     <%= form.label :room_number %>
     <%= form.text_field :room_number %>
@@ -31,6 +31,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
