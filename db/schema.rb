@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_20_152012) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_13_001424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_20_152012) do
     t.date "start_month"
     t.date "end_month"
     t.decimal "amount_due_next_month"
+    t.integer "tenant_id"
     t.index ["lease_id"], name: "index_payments_on_lease_id"
   end
 

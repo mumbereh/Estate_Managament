@@ -1,12 +1,9 @@
+<h1>Tenant Reports</h1>
 
-<div class="">
-<h1 class="header">Tenant Reports</h1>
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
-      <th>Full Name</th>
-      <th>Email</th>
-      <th>Home District</th>
+      <th>Name</th>
       <th>Village</th>
       <th>Next of Kin</th>
       <th>Room Number</th>
@@ -17,14 +14,11 @@
     <% @tenants.each do |tenant| %>
       <tr>
         <td><%= tenant.full_name %></td>
-        <td><%= tenant.email %></td>
-        <td><%= tenant.home_district %></td>
         <td><%= tenant.village %></td>
         <td><%= tenant.next_of_kin %></td>
         <td><%= tenant.room.room_number if tenant.room %></td>
-        <td><%= link_to 'View Report', tenant_report_path(tenant), class: 'btn btn-info' %></td>
+        <td><%= link_to 'View Report', tenant_report_path(tenant_id: tenant.id), class: 'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>

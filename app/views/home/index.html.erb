@@ -1,17 +1,40 @@
 <div class="home">
-    <h1>Welcome to Estate Management System</h1>
-    <div class="estate-background">
+  <h1>Welcome to Estate Management System</h1>
 
-    <div class="avatarPicture">
+  <!-- Search Form -->
+  <%= form_with url: reports_path, method: :get, local: true, class: 'search-form' do |form| %>
+    <div class="form-group">
+      <!-- Tenant Name Filter -->
+      <%= form.label :name, "Tenant Name:" %>
+      <%= form.text_field :name, placeholder: "Enter first or last name", class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <!-- Estate Name Filter -->
+      <%= form.label :estate_name, "Estate Name:" %>
+      <%= form.text_field :estate_name, placeholder: "Enter estate name", class: 'form-control' %>
+    </div>
+    
+    
+    <div class="form-group">
+      <!-- Submit Button -->
+      <%= form.submit "Search", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <!-- Estate Background (optional, if you have a background image or section) -->
+  <div class="estate-background">
+    <div class="avatarPicture"></div>
   </div>
 
-    </div>
-
-    <div>
+  <!-- Get Started Link -->
+  <div>
     <%= link_to 'Get Started', root_path, class: 'btn' %>
-    </div>
-    <div class="recent-estates">
-        <h2>Recent Estates</h2>
-    </div>
+  </div>
+
+  <!-- Recent Estates Section -->
+  <div class="recent-estates">
+    <h2>Recent Estates</h2>
+    <!-- Recent Estates will be displayed here if applicable -->
+  </div>
 </div>
-<div class="flashlight"></div>
