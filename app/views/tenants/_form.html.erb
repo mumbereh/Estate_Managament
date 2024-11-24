@@ -9,7 +9,8 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="form_tenant">
+<div>
   <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -29,7 +30,8 @@
     <%= form.label :home_district %>
     <%= form.text_field :home_district %>
   </div>
-
+</div>
+<div>
   <div class="field">
     <%= form.label :village %>
     <%= form.text_field :village %>
@@ -41,11 +43,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :room_id %>
-    <%= form.collection_select :room_id, Room.all, :id, :room_number %>
+    <%= form.label :estate_id %>
+    <%= form.collection_select :estate_id, Estate.all, :id, :name, prompt: "Select an Estate" %>
   </div>
 
+  <div class="field">
+    <%= form.label :room_id %>
+    <%= form.collection_select :room_id, Room.all, :id, :room_number, prompt: "Select a Room" %>
+  </div>
+  </div>
   <div class="actions">
-  <%= form.submit class: 'btn btn-primary' %>
-</div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
 <% end %>

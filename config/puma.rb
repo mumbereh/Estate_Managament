@@ -31,4 +31,4 @@ plugin :tmp_restart
 preload_app!
 
 # Ensure the worker count is correctly set.
-workers ENV.fetch("WEB_CONCURRENCY") { 4 }
+#workers ENV.fetch("WEB_CONCURRENCY") { 4 }

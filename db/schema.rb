@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_08_104404) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_13_001424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_08_104404) do
     t.date "start_month"
     t.date "end_month"
     t.decimal "amount_due_next_month"
+    t.integer "tenant_id"
     t.index ["lease_id"], name: "index_payments_on_lease_id"
   end
 
@@ -80,6 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_08_104404) do
     t.bigint "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "estate_id", null: false
+    t.index ["estate_id"], name: "index_tenants_on_estate_id"
     t.index ["room_id"], name: "index_tenants_on_room_id"
   end
 
@@ -105,5 +108,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_08_104404) do
   add_foreign_key "leases", "tenants"
   add_foreign_key "payments", "leases"
   add_foreign_key "rooms", "room_types"
+  add_foreign_key "tenants", "estates"
   add_foreign_key "tenants", "rooms"
 end

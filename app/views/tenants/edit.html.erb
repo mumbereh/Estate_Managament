@@ -1,10 +1,5 @@
-<h1>Editing tenant</h1>
+<h1 class="header">Edit Tenant</h1>
 
-<%= render "form", tenant: @tenant %>
+<%= render 'form', tenant: @tenant %>
 
-<br>
-
-<div>
-  <%= link_to "Show this tenant", @tenant %> |
-  <%= link_to "Back to tenants", tenants_path %>
-</div>
+<%= link_to 'Back', tenants_path %>

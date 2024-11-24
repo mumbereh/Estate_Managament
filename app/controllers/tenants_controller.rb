@@ -2,7 +2,7 @@ class TenantsController < ApplicationController
   before_action :set_tenant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tenants = Tenant.all
+    @tenants = Tenant.all.includes(:room, :estate)
   end
 
   def show
@@ -44,6 +44,6 @@ class TenantsController < ApplicationController
   end
 
   def tenant_params
-    params.require(:tenant).permit(:first_name, :last_name, :email, :home_district, :village, :next_of_kin, :room_id)
+    params.require(:tenant).permit(:first_name, :last_name, :email, :home_district, :village, :next_of_kin, :room_id, :estate_id)
   end
 end

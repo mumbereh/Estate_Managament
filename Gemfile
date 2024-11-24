@@ -1,63 +1,43 @@
 source "https://rubygems.org"
 
- ruby "3.2.2"
+ruby "3.2.5"
 
-
-gem "rails", "~> 7.1.3", ">= 7.1.3.3"  # Using the latest stable Rails version
+gem "rails", "~> 7.1.4"  
 
 gem 'execjs', '~> 2.9.1'
-
-gem "sprockets-rails"  # Asset pipeline for Rails
-
-gem "mail"  # Handle email sending
-
-gem "pg"  # PostgreSQL database for Active Record
-
-gem "kaminari"  # Pagination support
-
-gem "will_paginate", "~> 3.3"  # Alternative pagination gem
-
-gem "groupdate", "~> 3.0"  # For time grouping in reports
-
-gem "puma", ">= 5.0"  # Puma web server
-
-gem "importmap-rails"  # Use JavaScript with ESM import maps
-
-gem "turbo-rails"  # SPA-like experience via Hotwire's Turbo
-
-gem "stimulus-rails"  # For modest JavaScript framework Stimulus
-
-gem "jbuilder"  # For building JSON APIs
-
+gem "sprockets-rails"  
+gem "mail"  
+gem "pg"  
+gem "kaminari"  
+gem "will_paginate", "~> 3.3"  
+gem "groupdate", "~> 3.0"  
+gem "puma", ">= 5.0"  
+gem "importmap-rails"  
+gem "turbo-rails"  
+gem "stimulus-rails"  
+gem "jbuilder"  
 gem 'autoprefixer-rails', '~> 10.4.19.0'
-
-gem "httparty"  # For making HTTP requests
-
-gem "dotenv-rails", groups: [:development, :test]  # Environment variable management
-
-gem "tzinfo-data", platforms: %i[windows jruby]  # Timezone info on Windows
-
-gem "bootsnap", require: false  # Speeds up boot times
-
-gem "bootstrap", "~> 5.3", ">= 5.3.3"  # Latest Bootstrap for styling
-
-gem "devise"  # Authentication support
-
-gem "wicked_pdf"  # PDF generation
-
-gem "wkhtmltopdf-binary"  # Binary dependency for PDF generation
-
-gem "sassc-rails", "~> 2.1"  # SassC for faster Sass compilation
+gem "httparty"  
+gem "dotenv-rails", groups: [:development, :test]  
+gem "tzinfo-data", platforms: %i[windows jruby]  
+gem "bootsnap", require: false  
+gem "bootstrap", "~> 5.3", ">= 5.3.3"  
+gem "devise"  
+gem "wicked_pdf" 
+gem "wkhtmltopdf-binary"  
+gem "sassc-rails", "~> 2.1"
 
 group :development, :test do
-  gem "debug", platforms: %i[mri windows]  # Debugging support
+  gem "debug", platforms: %i[mri windows]  
 end
 
 group :development do
-  gem "web-console"  # Rails console for the browser
+  gem "web-console"  
 end
 
 group :test do
-  gem "capybara"  # System testing
-  gem "selenium-webdriver"  # Web driver for testing
+  gem "capybara"  
+  gem "selenium-webdriver"  
 end
+
+gem "prawn", "~> 2.5"

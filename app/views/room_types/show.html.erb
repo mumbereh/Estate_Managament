@@ -1,5 +1,6 @@
-<h1 class="header">Room Type Details</h1>
 
+<h1 class="header">Room Type Details</h1>
+<div class="show_container">
 <p>
   <strong>Status Name:</strong>
   <%= @room_type.status_name %>
@@ -10,5 +11,6 @@
   <%= @room_type.description %>
 </p>
 
-<%= link_to 'Edit', edit_room_type_path(@room_type) %> |
-<%= link_to 'Back', room_types_path %>
+<%= link_to 'Edit', edit_room_type_path(@room_type), class: 'btn btn-warning' %> |
+<%= link_to 'Back', room_types_path, class: 'btn btn-primary' %>
+</div>

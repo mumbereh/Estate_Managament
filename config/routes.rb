@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   resources :about, only:[:index]
   
   # Add routes for reports
-  get 'reports', to: 'reports#index'
-  get 'reports/tenant_report/:tenant_id', to: 'reports#tenant_report', as: 'tenant_report'
+  resources :reports, only: [:index] do
+    get :tenant_report, on: :collection
+    get :estate_report, on: :collection  # Add route for estate report
+  end
 
+  resources :tenants do
+    get 'report', to: 'reports#tenant_report', as: 'report'
+  end
   # Define the root route
   # root 'estates#index'
   root 'home#index'
