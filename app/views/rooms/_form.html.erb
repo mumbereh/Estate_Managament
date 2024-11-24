@@ -16,11 +16,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field">
     <%= form.label :room_type_id, "Room Type" %>
     <%= form.collection_select :room_type_id, RoomType.all, :id, :status_name, prompt: "Select Room Type" %>
   </div>
@@ -29,6 +24,11 @@
     <%= form.label :estate_id, "Estate" %>
     <%= form.collection_select :estate_id, Estate.all, :id, :name, prompt: "Select Estate" %>
   </div>
+
+  <div class="price" id="price">
+  <%= form.label :price %>
+  <%= form.number_field :price %>
+</div>
 
   <div class="actions">
     <%= form.submit class: 'btn btn-primary' %>
